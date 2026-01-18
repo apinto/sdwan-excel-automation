@@ -1,0 +1,33 @@
+from pydantic import BaseModel
+
+class transportProfile(BaseModel):
+    name: str
+    description: str
+
+class transportProfileBuilder:
+    def __init__(self, name: str, description: str):
+        self.name = name
+        self._model = transportProfile(name=name, description=description)
+
+    def build(self) -> transportProfile:
+        return self._model
+
+    def dict(self) -> dict:
+        return self._model.model_dump()
+
+    def json(self) -> str:
+        return self._model.model_dump_json(indent=2)
+    
+    @staticmethod
+    def api_url() -> str:
+        return "/dataservice/v1/feature-profile/sdwan/transport/"
+
+'''
+builder = transportProfileBuilder(
+    name="FeatureProfile-ConfigGroup1-NY",
+    description="Feature Profile for config group 1 for NY site"
+)
+
+print(builder.json())
+print(builder.api_url())
+'''
