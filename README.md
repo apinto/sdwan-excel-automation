@@ -91,7 +91,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 3. Install dependencies:
 ```bash
-pip install catalystwan pandas openpyxl
+pip install -r requirements.txt
 ```
 
 4. Update vManager credentials in `excel2sdwan.py`:

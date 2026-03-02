@@ -7,7 +7,7 @@ import sys
 import pandas as pd
 import argparse
 from pathlib import Path
-from catalystwan.core.session import create_manager_session
+from catalystwan.session import create_manager_session
 import urllib3
 
 # Disable insecure request warnings

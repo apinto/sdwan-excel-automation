@@ -81,7 +81,7 @@ from modules.conf_groups.parsers import (
     parse_excel_to_config_group_builders,
 )
 
-from catalystwan.core.session import create_manager_session
+from catalystwan.session import create_manager_session
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
